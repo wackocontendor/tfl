@@ -3,8 +3,8 @@ import requests
 import math
 import pandas as pd
 import os
-from My_Functions import get_available_modes
-from My_Functions import get_available_lines
+from functions import get_available_modes
+from functions import get_available_lines
 
 #These are the authentication keys to add to the end of any TfL API search request (it increases the number of calls per minute that you're allowed)
 app_id = os.environ.get('TFL_API_ID')
