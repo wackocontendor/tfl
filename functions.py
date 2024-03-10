@@ -16,7 +16,7 @@ def get_available_lines():
     return ['bakerloo', 'central', 'circle', 'district', 'dlr', 'elizabeth', 'hammersmith-city', 'jubilee', 'london-cable-car', 'london-overground', 'metropolitan', 'northern', 'piccadilly', 'tram', 'victoria', 'waterloo-city']
 
 #Return all the available modes on the network
-def get_available_modes():
+def get_all_modes():
     modes_response = requests.get(f'{url_prefix}Journey/Meta/Modes')
     modes_content = json.loads(modes_response.content)
     modes_list = []
@@ -27,7 +27,7 @@ def get_available_modes():
     return modes_list
 
 #Return all the lines for the given modes
-def get_available_lines():
+def get_all_lines():
     search_modes = get_available_modes()
     lines_response = requests.get(f'{url_prefix}line/mode/{search_modes}?app_id={app_id}&app_key={app_keys}')
     lines_content = json.loads(lines_response.content)
